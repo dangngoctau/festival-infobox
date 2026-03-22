@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chua",
+    "name": "Khuôn viên Chùa Quán Thế Âm",
+    "shortName": "Khuôn viên Chùa",
+    "address": "48 Sư Vạn Hạnh, Hòa Hải, Ngũ Hành Sơn, Đà Nẵng",
+    "lat": 15.9975,
+    "lng": 108.2635,
+    "color": "#B8860B",
+    "description": "Địa điểm trung tâm — lễ nghi Phật giáo, triển lãm, hoa đăng"
+  },
+  {
+    "id": "san-khau",
+    "name": "Sân khấu chính",
+    "shortName": "Sân khấu chính",
+    "address": "Khuôn viên Chùa Quán Thế Âm",
+    "lat": 15.9972,
+    "lng": 108.2631,
+    "color": "#8B2500",
+    "description": "Khai mạc, bế mạc, chương trình nghệ thuật, thuyết pháp"
+  },
+  {
+    "id": "su-van-hanh",
+    "name": "Đường Sư Vạn Hạnh",
+    "shortName": "Đ. Sư Vạn Hạnh",
+    "address": "Đường Sư Vạn Hạnh, Hòa Hải, Ngũ Hành Sơn",
+    "lat": 15.9965,
+    "lng": 108.2618,
+    "color": "#2E5A88",
+    "description": "Triển lãm, trò chơi dân gian, múa rối, bài chòi"
+  },
+  {
+    "id": "hoa-quy",
+    "name": "Công viên Hòa Quý – Đồng Nò",
+    "shortName": "CV Hòa Quý",
+    "address": "Khu đô thị Hòa Quý – Đồng Nò, Ngũ Hành Sơn",
+    "lat": 15.985,
+    "lng": 108.255,
+    "color": "#4A6741",
+    "description": "Trình diễn diều nghệ thuật — cách khu vực chính ~2km"
+  },
+  {
+    "id": "song-co-co",
+    "name": "Sông Cổ Cò",
+    "shortName": "Sông Cổ Cò",
+    "address": "Sông Cổ Cò, Ngũ Hành Sơn",
+    "lat": 15.996,
+    "lng": 108.26,
+    "color": "#6A3D7D",
+    "description": "Đua thuyền truyền thống — chỉ ngày 06/04"
+  },
+  {
+    "id": "dieu-hanh",
+    "name": "Các tuyến đường chính TP",
+    "shortName": "Diễu hành xe hoa",
+    "address": "Các tuyến đường chính, TP Đà Nẵng",
+    "lat": 15.997,
+    "lng": 108.25,
+    "color": "#B5651D",
+    "description": "Diễu hành xe hoa 18:00–20:00 ngày 1-3"
+  }
+]

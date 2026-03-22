@@ -1,0 +1,54 @@
+{
+  "header": {
+    "tagline": "National Intangible Cultural Heritage",
+    "dates": "Apr 04–07, 2026 (17-20/02 Lunar Bính Ngọ)"
+  },
+  "tabs": {
+    "schedule": "Schedule",
+    "map": "Map"
+  },
+  "filters": {
+    "all": "All"
+  },
+  "dayLabels": {
+    "0": "Opening",
+    "1": "Day 2",
+    "2": "Main",
+    "3": "Closing"
+  },
+  "timeGroup": {
+    "ongoing": "Happening now",
+    "upcoming": "Coming up",
+    "ended": "Ended"
+  },
+  "emptyState": {
+    "daysUntil": "days until the festival",
+    "summary": "Apr 04–07, 2026 | 4 days | 40+ events",
+    "addToCalendar": "Add to Calendar",
+    "festivalEnded": "The festival has ended",
+    "seeYouNext": "See you at Quan The Am Festival {{year}}!"
+  },
+  "eventDetail": {
+    "directions": "Get Directions",
+    "organization": "Organized by",
+    "partners": "Co-organized",
+    "close": "Close"
+  },
+  "noEvents": "No events match your filters.",
+  "category": {
+    "ceremony": "Ceremony",
+    "dharma": "Dharma",
+    "folk": "Folk",
+    "exhibition": "Exhibition",
+    "culinary": "Vegetarian Cuisine",
+    "art": "Art & Performance"
+  },
+  "simulator": {
+    "label": "Simulate:",
+    "reset": "Reset"
+  },
+  "weather": {
+    "noData": "Weather data unavailable"
+  },
+  "featured": "Featured event"
+}

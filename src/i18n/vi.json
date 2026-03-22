@@ -1,0 +1,54 @@
+{
+  "header": {
+    "tagline": "Di sản văn hóa phi vật thể quốc gia",
+    "dates": "04 – 07/04/2026 (17-20/02 Âm lịch Bính Ngọ)"
+  },
+  "tabs": {
+    "schedule": "Chương trình",
+    "map": "Bản đồ"
+  },
+  "filters": {
+    "all": "Tất cả"
+  },
+  "dayLabels": {
+    "0": "Khai mạc",
+    "1": "Ngày 2",
+    "2": "Lễ chính",
+    "3": "Bế mạc"
+  },
+  "timeGroup": {
+    "ongoing": "Đang diễn ra",
+    "upcoming": "Sắp tới",
+    "ended": "Đã kết thúc"
+  },
+  "emptyState": {
+    "daysUntil": "ngày nữa đến lễ hội",
+    "summary": "04 – 07/04/2026 | 4 ngày | 40+ sự kiện",
+    "addToCalendar": "Thêm vào lịch",
+    "festivalEnded": "Lễ hội đã kết thúc",
+    "seeYouNext": "Hẹn gặp lại tại Lễ hội Quán Thế Âm {{year}}!"
+  },
+  "eventDetail": {
+    "directions": "Chỉ đường",
+    "organization": "Đơn vị",
+    "partners": "Phối hợp",
+    "close": "Đóng"
+  },
+  "noEvents": "Không có sự kiện nào phù hợp.",
+  "category": {
+    "ceremony": "Lễ nghi",
+    "dharma": "Phật pháp",
+    "folk": "Dân gian",
+    "exhibition": "Triển lãm",
+    "culinary": "Ẩm thực chay",
+    "art": "Nghệ thuật"
+  },
+  "simulator": {
+    "label": "Giả lập:",
+    "reset": "Reset"
+  },
+  "weather": {
+    "noData": "Không có dữ liệu thời tiết"
+  },
+  "featured": "Sự kiện nổi bật"
+}

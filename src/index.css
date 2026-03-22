@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  /* Warm background & text */
+  --color-warm-bg: #FFF8F0;
+  --color-warm-card: #FFFDF7;
+  --color-warm-text: #3E2723;
+  --color-warm-muted: #795548;
+
+  /* Accent */
+  --color-accent-gold: #C8A35A;
+  --color-accent-brown: #6B4226;
+  --color-accent-green: #4A6741;
+
+  /* Location colors */
+  --color-loc-chua: #B8860B;
+  --color-loc-san-khau: #8B2500;
+  --color-loc-su-van-hanh: #2E5A88;
+  --color-loc-hoa-quy: #4A6741;
+  --color-loc-song-co-co: #6A3D7D;
+  --color-loc-dieu-hanh: #B5651D;
+
+  /* Category colors */
+  --color-cat-ceremony: #C8A35A;
+  --color-cat-dharma: #8B6914;
+  --color-cat-folk: #2E7D32;
+  --color-cat-exhibition: #2E5A88;
+  --color-cat-culinary: #E65100;
+  --color-cat-art: #6A3D7D;
+
+  /* Font */
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+
+  /* Font sizes */
+  --text-base: 1rem;
+  --text-base--line-height: 1.625;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.625;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-warm-bg);
+  color: var(--color-warm-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
