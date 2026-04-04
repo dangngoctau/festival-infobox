@@ -1,0 +1,68 @@
+[
+  {
+    "id": "wc-1",
+    "type": "wc",
+    "name": "Nhà vệ sinh",
+    "nameEn": "Restroom",
+    "lat": 15.997854,
+    "lng": 108.254437,
+    "color": "#E85D75",
+    "note": "",
+    "noteEn": ""
+  },
+  {
+    "id": "wc-2",
+    "type": "wc",
+    "name": "Nhà vệ sinh",
+    "nameEn": "Restroom",
+    "lat": 15.99963,
+    "lng": 108.254682,
+    "color": "#E85D75",
+    "note": "",
+    "noteEn": ""
+  },
+  {
+    "id": "wc-3",
+    "type": "wc",
+    "name": "Nhà vệ sinh",
+    "nameEn": "Restroom",
+    "lat": 15.999393,
+    "lng": 108.257679,
+    "color": "#E85D75",
+    "note": "",
+    "noteEn": ""
+  },
+  {
+    "id": "parking-btc",
+    "type": "parking",
+    "name": "Bãi xe Ban Tổ chức",
+    "nameEn": "Organizer Parking",
+    "lat": 15.998339,
+    "lng": 108.254221,
+    "color": "#D4845A",
+    "note": "",
+    "noteEn": ""
+  },
+  {
+    "id": "parking-dk1",
+    "type": "parking",
+    "name": "Bãi xe · Phía Bắc cổng chào",
+    "nameEn": "Parking · North of entrance gate",
+    "lat": 16.001015,
+    "lng": 108.259383,
+    "color": "#D4845A",
+    "note": "",
+    "noteEn": ""
+  },
+  {
+    "id": "parking-dk2",
+    "type": "parking",
+    "name": "Bãi xe · Gần đường Lê Văn Hiến",
+    "nameEn": "Parking · Near Le Van Hien Street",
+    "lat": 16.000528,
+    "lng": 108.259938,
+    "color": "#D4845A",
+    "note": "",
+    "noteEn": ""
+  }
+]

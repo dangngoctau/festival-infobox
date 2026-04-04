@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { trackFeatureEngaged, trackErrorEncountered } from '../../utils/analytics'
 
 const WEATHER_URL =
-  'https://api.open-meteo.com/v1/forecast?latitude=15.9975&longitude=108.2635&current=temperature_2m,weather_code&timezone=Asia/Ho_Chi_Minh&forecast_days=1'
+  'https://api.open-meteo.com/v1/forecast?latitude=15.9975&longitude=108.2635&current=temperature_2m,weather_code&timezone=Asia/Ho_Chi_Minh&forecast_days=1&models=ecmwf_ifs025'
 
 const weatherDescriptions = {
   0: { vi: 'Trời quang', en: 'Clear sky' },
@@ -41,9 +42,12 @@ export default function WeatherWidget() {
             temp: Math.round(data.current.temperature_2m),
             code: data.current.weather_code,
           })
+          trackFeatureEngaged({ feature: 'weather_widget', action: 'opened' })
         }
       })
-      .catch(() => {})
+      .catch(() => {
+        trackErrorEncountered({ errorType: 'api_failure', context: 'open-meteo' })
+      })
   }, [])
 
   if (!weather) return null

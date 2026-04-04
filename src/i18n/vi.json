@@ -5,21 +5,24 @@
   },
   "tabs": {
     "schedule": "Chương trình",
-    "map": "Bản đồ"
+    "map": "Địa điểm"
   },
   "filters": {
-    "all": "Tất cả"
+    "all": "Tất cả",
+    "byLocation": "Theo nơi",
+    "byCategory": "Theo loại"
   },
   "dayLabels": {
     "0": "Khai mạc",
-    "1": "Ngày 2",
-    "2": "Lễ chính",
+    "1": "Rộn ràng",
+    "2": "Hoan hỷ",
     "3": "Bế mạc"
   },
   "timeGroup": {
     "ongoing": "Đang diễn ra",
     "upcoming": "Sắp tới",
-    "ended": "Đã kết thúc"
+    "ended": "Đã kết thúc",
+    "now": "Bây giờ"
   },
   "emptyState": {
     "daysUntil": "ngày nữa đến lễ hội",
@@ -32,9 +35,59 @@
     "directions": "Chỉ đường",
     "organization": "Đơn vị",
     "partners": "Phối hợp",
-    "close": "Đóng"
+    "close": "Đóng",
+    "nearbyAmenities": "Tiện ích gần đây",
+    "about": "Giới thiệu",
+    "where": "Địa điểm",
+    "organizedBy": "Đơn vị tổ chức",
+    "coOrganized": "Phối hợp tổ chức",
+    "showAllPartners": "Xem tất cả ({{count}})",
+    "hidePartners": "Thu gọn",
+    "ended": "Đã kết thúc",
+    "favorite": "Lưu sự kiện",
+    "unfavorite": "Bỏ lưu"
   },
+  "lunarLabel": "{{lunar}} ÂL",
   "noEvents": "Không có sự kiện nào phù hợp.",
+  "noEventsWarm": "Không có chương trình tại đây hôm nay.\nThử xem ngày khác nhé!",
+  "dayContext": {
+    "label": "Ngày {{num}} — {{label}} · {{count}} sự kiện",
+    "tagline": {
+      "0": "Sáng khai kinh, chiều khai hội, tối hoa đăng",
+      "1": "Cà kheo rộn ràng, kinh kệ an nhiên",
+      "2": "Ngày vía Bồ tát — tâm điểm lễ hội",
+      "3": "Đi bộ vì hòa bình, khép lại mùa lễ"
+    }
+  },
+  "timeState": {
+    "beforeHeading": "Chương trình ngày {{date}}",
+    "afterMessage": "Lễ hội đã khép lại. Hẹn gặp lại năm 2027!",
+    "ongoing": "Đang diễn ra"
+  },
+  "map": {
+    "toggleAmenities": "Hiện/ẩn tiện ích",
+    "loadError": "Không thể tải bản đồ",
+    "allZones": "Tất cả khu vực",
+    "backToZones": "Quay lại tất cả khu vực",
+    "findMyLocation": "Tìm vị trí của tôi",
+    "gpsButton": "Tôi ở đây",
+    "gpsSearching": "Đang tìm...",
+    "gpsError": "Không tìm được vị trí",
+    "gpsFound": "Đã tìm thấy vị trí",
+    "utilityToggle": "Tiện ích",
+    "utilities": "Tiện ích",
+    "restroom": "Nhà vệ sinh",
+    "parking": "Bãi đỗ xe",
+    "directions": "Chỉ đường",
+    "locations": "điểm"
+  },
+  "catGroup": {
+    "buddhist-ceremony": "Lễ Phật giáo",
+    "performing-arts": "Nghệ thuật",
+    "exhibition": "Triển lãm",
+    "folk-culture": "Dân gian",
+    "cuisine": "Ẩm thực"
+  },
   "category": {
     "ceremony": "Lễ nghi",
     "dharma": "Phật pháp",
@@ -50,5 +103,107 @@
   "weather": {
     "noData": "Không có dữ liệu thời tiết"
   },
-  "featured": "Sự kiện nổi bật"
+  "featured": "Sự kiện nổi bật",
+  "favorites": {
+    "add": "Lưu sự kiện",
+    "remove": "Bỏ lưu sự kiện",
+    "chip": "♥ Đã lưu",
+    "chipCount": "♥ Đã lưu ({{count}})"
+  },
+  "places": {
+    "contextBefore": "Khám phá khu vực lễ hội trước khi đến",
+    "contextDuring": "Bạn đang ở lễ hội — tìm đường đến các điểm bên dưới",
+    "contextAfter": "Khu vực lễ hội — hẹn gặp lại năm 2027!",
+    "toggleVenues": "Các điểm đến",
+    "toggleAmenities": "Cần tìm gì?",
+    "venueCount": "{{count}} địa điểm tổ chức",
+    "amenityAllLabel": "{{count}} tiện ích gần đây",
+    "eventsToday": "{{count}} sự kiện hôm nay",
+    "directions": "Chỉ đường"
+  },
+  "qr": {
+    "scanToAccess": "Quét để truy cập",
+    "alt": "Mã QR"
+  },
+  "splash": {
+    "alt": "Lễ hội Quán Thế Âm tại Ngũ Hành Sơn, Đà Nẵng"
+  },
+  "ics": {
+    "summary": "Lễ hội Quán Thế Âm 2026",
+    "description": "Lễ hội Quán Thế Âm - Di sản văn hóa phi vật thể quốc gia. Ngũ Hành Sơn, Đà Nẵng.",
+    "location": "Chùa Quán Thế Âm, 48 Sư Vạn Hạnh, Ngũ Hành Sơn, Đà Nẵng"
+  },
+  "aria": {
+    "toggleLanguage": "Chuyển ngôn ngữ",
+    "toggleSettings": "Cài đặt",
+    "share": "Chia sẻ",
+    "shareEvent": "Chia sẻ sự kiện"
+  },
+  "share": {
+    "copied": "Đã sao chép liên kết"
+  },
+  "analyticsNotice": {
+    "message": "Chúng tôi ghi nhận thống kê ẩn danh để cải thiện trải nghiệm — không lưu thông tin cá nhân.",
+    "ok": "Đã hiểu"
+  },
+  "landing": {
+    "heritageBadge": "Di sản văn hóa phi vật thể quốc gia",
+    "lunarDates": "17–20/02 Âm lịch Bính Ngọ",
+    "dates": "4 – 7 tháng 4, 2026",
+    "daysUntil": "Còn {{count}} ngày",
+    "countdownPrefix": "Còn",
+    "countdownSuffix": "ngày",
+    "duringFestival": "Đang diễn ra — Ngày {{dayNum}}/4",
+    "festivalEnded": "Hẹn gặp lại năm 2027",
+    "ctaDefault": "Xem chương trình",
+    "ctaDuring": "Xem đang diễn ra",
+    "ctaAfter": "Xem lại chương trình",
+    "transitionTagline": "4 ngày · 40+ sự kiện · một trải nghiệm trọn vẹn",
+    "featuredTitle": "Không thể bỏ lỡ",
+    "featuredDuring": "Hôm nay tại lễ hội",
+    "featuredOngoing": "Đang diễn ra",
+    "featuredUpcoming": "Sắp tới",
+    "featuredEndedBadge": "Đã kết thúc",
+    "featuredTomorrow": "Ngày mai tại lễ hội",
+    "featuredTomorrowBadge": "Ngày mai",
+    "featuredHighlights": "Điểm nhấn lễ hội",
+    "highlightsTitle": "5 trải nghiệm tại lễ hội",
+    "primaryBadge": "Trọng tâm",
+    "eventCount": "{{count}} chương trình",
+    "viewFullSchedule": "Xem chương trình đầy đủ →",
+    "teaserPerformingArts": "• 04/04 · Múa rối cạn & múa rối nước",
+    "teaserExhibition": "• 04/04 · Điêu khắc đá & đá mỹ nghệ Non Nước",
+    "teaserFolkCulture": "• 06/04 · Đua thuyền rước Huyền Trân Công Chúa trên sông Cổ Cò",
+    "teaserCuisine": "• 04/04 · Ẩm thực chay Đà Nẵng",
+    "beforeYouGoTitle": "Chuẩn bị trước khi đến",
+    "whenWhereTitle": "Khi nào & Ở đâu",
+    "duration": "4 ngày · 40+ sự kiện",
+    "venueName": "Chùa Quán Thế Âm & trục đường Sư Vạn Hạnh",
+    "venueDistrict": "Hòa Hải, Ngũ Hành Sơn, Đà Nẵng",
+    "entryPoint": "Vào từ cổng chào phía đường Lê Văn Hiến",
+    "gateDirectionsLink": "Chỉ đường đến cổng chào →",
+    "gettingThereTitle": "Cách đến",
+    "transportMotorbike": "Xe máy / Ô tô",
+    "transportMotorbikeInfo": "Gửi xe trên đường Lê Văn Hiến (2 bãi gần cổng chào), đi bộ vào 2–3 phút. Đường Sư Vạn Hạnh chỉ dành cho người đi bộ.",
+    "transportBus": "Xe bus",
+    "transportBusInfo": "Tuyến 02 (Bến xe Trung tâm – TTHC TP Đà Nẵng – Cửa Đại) dừng ngay cổng chào Lê Văn Hiến. 15–30 phút/chuyến đến 19h; tối đi Grab/taxi.",
+    "transportGrab": "Grab / Taxi",
+    "transportGrabInfo": "Xuống xe tại cổng chào Sư Vạn Hạnh (giao Lê Văn Hiến). Tối ngày 1–3 có diễu hành xe hoa, có thể kẹt đường.",
+    "tipsTitle": "Lưu ý khi tham dự",
+    "tipClothing": "Mặc trang phục kín đáo khi vào khuôn viên Chùa",
+    "tipWeatherStatic": "☀️ Đà Nẵng tháng 4 nắng 30–35°C — mang nón và nước uống",
+    "tipWeatherRain": "🌧️ {{context}} — mang dù hoặc áo mưa",
+    "tipWeatherHot": "☀️ {{context}}: đến {{temp}}°C — mang nón và nước uống",
+    "tipWeatherMild": "⛅ {{context}} — thời tiết dễ chịu, nên mang nón phòng nắng",
+    "weatherContextCurrent": "Hiện tại",
+    "weatherContextForecast": "Dự báo lễ hội",
+    "tipFood": "Có khu ẩm thực chay và gian hàng OCOP tại lễ hội",
+    "sidebarVenueAlt": "Chùa Quán Thế Âm",
+    "sidebarShareTitle": "Chia sẻ với bạn bè",
+    "back": "Quay lại",
+    "festivalName": "Lễ hội Quán Thế Âm",
+    "festivalLocation": "Ngũ Hành Sơn, Đà Nẵng",
+    "footerCTAText": "Sẵn sàng khám phá lễ hội?",
+    "footerCTAButton": "Xem chương trình"
+  }
 }

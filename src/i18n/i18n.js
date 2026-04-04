@@ -17,7 +17,10 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      // Only check localStorage (return visitors keep their choice).
+      // First-time visitors always get Vietnamese — the hero shows
+      // a gentle nudge for non-Vietnamese browsers.
+      order: ['localStorage'],
       caches: ['localStorage'],
     },
   })

@@ -4,5 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/festival-infobox/',
+  base: '/',
+  server: {
+    allowedHosts: ['4b23-117-2-155-117.ngrok-free.app'],
+  },
 })

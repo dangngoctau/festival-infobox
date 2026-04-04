@@ -1,17 +1,24 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import locations from '../../data/locations.json'
 import { categoryColors } from '../../data/colorMap'
 import { getDirectionsUrl } from '../../utils/deepLink'
+import { getEventText, getLocationText } from '../../utils/i18nEvent'
+import { trackDirectionsRequested } from '../../utils/analytics'
+import { LocationPin } from '../icons'
+import { Building2, Users } from 'lucide-react'
+import EventDetailHeader from './EventDetailHeader'
 
 const locationMap = Object.fromEntries(locations.map((l) => [l.id, l]))
 
-export default function EventDetail({ event, onClose }) {
-  const { t } = useTranslation()
+export default function EventDetail({
+  event, onClose, timeStatus, isFavorite, onToggleFavorite, favLoaded,
+}) {
+  const { t, i18n } = useTranslation()
   const loc = locationMap[event.locationId]
-  const timeRange = event.endTime
-    ? `${event.startTime} – ${event.endTime}`
-    : event.startTime
+  const lang = i18n.language
+  const isEn = lang === 'en'
+  const [showAllPartners, setShowAllPartners] = useState(false)
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -28,90 +35,142 @@ export default function EventDetail({ event, onClose }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
+  const partners = isEn && event.partnerOrgsEn ? event.partnerOrgsEn : event.partnerOrgs
+  const hasPartners = partners?.length > 0
+  const visiblePartners = showAllPartners ? partners : partners?.slice(0, 2)
+  const hasMorePartners = hasPartners && partners.length > 2
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end tablet:items-center justify-center"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="event-detail-title"
     >
       <div className="absolute inset-0 bg-black/50" />
+
+      {/* Three-zone modal */}
       <div
-        className="relative bg-warm-card w-full tablet:max-w-lg tablet:rounded-xl rounded-t-xl max-h-[85vh] overflow-y-auto"
+        className="relative bg-warm-card w-full tablet:max-w-lg tablet:rounded-xl rounded-t-xl max-h-[85vh] flex flex-col overflow-hidden"
+        style={{ borderTopColor: categoryColors[event.category], borderTopWidth: '4px' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-warm-bg/80 text-warm-text hover:bg-warm-bg z-10"
-          aria-label={t('eventDetail.close')}
-        >
-          ✕
-        </button>
+        {/* Zone 1: Identity Header */}
+        <div className="shrink-0">
+          <EventDetailHeader
+            event={event}
+            timeStatus={timeStatus}
+            isFavorite={isFavorite}
+            onToggleFavorite={onToggleFavorite}
+            favLoaded={favLoaded}
+            onClose={onClose}
+            location={loc}
+          />
+        </div>
 
-        <div className="p-5">
-          <span
-            className="inline-block px-2.5 py-1 rounded text-xs font-medium text-white mb-3"
-            style={{ backgroundColor: categoryColors[event.category] }}
-          >
-            {t(`category.${event.category}`)}
-          </span>
-
-          <h2 className="text-xl font-bold text-warm-text mb-2 pr-8">
-            {event.title}
-          </h2>
-
-          <p className="text-accent-brown font-medium mb-1">{timeRange}</p>
-          <p className="text-warm-muted text-sm mb-3">
-            {event.date} ({event.lunarDate})
-          </p>
-
+        {/* Zone 2: Scrollable Content */}
+        <div className="flex-1 overflow-y-auto min-h-0 px-5 pb-4">
+          {/* Location card */}
           {loc && (
-            <div className="flex items-center gap-2 mb-3">
-              <span
-                className="w-3 h-3 rounded-full shrink-0"
-                style={{ backgroundColor: loc.color }}
-              />
-              <span className="text-warm-text font-medium">{loc.name}</span>
+            <div
+              className="rounded-lg p-3 mb-4"
+              style={{ backgroundColor: loc.color + '0D' }}
+            >
+              <div className="flex items-center gap-2">
+                <LocationPin locationId={event.locationId} variant="dot" size={22} />
+                <div>
+                  <p className="text-warm-text font-medium">
+                    {getLocationText(loc, 'name', lang)}
+                  </p>
+                  {loc.address && (
+                    <p className="text-sm text-warm-muted">{getLocationText(loc, 'address', lang)}</p>
+                  )}
+                </div>
+              </div>
             </div>
           )}
 
+          {/* Description */}
           {event.description && (
             <p className="text-warm-muted leading-relaxed mb-4">
-              {event.description}
+              {getEventText(event, 'description', lang)}
             </p>
           )}
 
-          {event.leadOrg && (
-            <p className="text-sm text-warm-muted mb-1">
-              <span className="font-medium text-warm-text">{t('eventDetail.organization')}:</span>{' '}
-              {event.leadOrg}
-            </p>
+          {/* Organization */}
+          {(event.leadOrg || hasPartners) && (
+            <div className="rounded-lg bg-warm-bg/50 p-3 mb-4">
+              {event.leadOrg && (
+                <div className={`flex items-start gap-2${hasPartners ? ' pb-2.5 mb-2.5 border-b border-bronze/10' : ''}`}>
+                  <Building2 size={16} className="text-warm-muted mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm text-warm-muted">{t('eventDetail.organizedBy')}</p>
+                    <p className="text-sm text-warm-text font-medium">
+                      {getEventText(event, 'leadOrg', lang)}
+                    </p>
+                  </div>
+                </div>
+              )}
+              {hasPartners && (
+                <div className="flex items-start gap-2">
+                  <Users size={16} className="text-warm-muted mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm text-warm-muted">{t('eventDetail.coOrganized')}</p>
+                    <p className="text-sm text-warm-text">
+                      {visiblePartners.join(', ')}
+                    </p>
+                    {hasMorePartners && (
+                      <button
+                        onClick={() => setShowAllPartners((v) => !v)}
+                        className="text-sm text-accent-gold font-medium mt-0.5"
+                        aria-expanded={showAllPartners}
+                      >
+                        {showAllPartners
+                          ? t('eventDetail.hidePartners')
+                          : t('eventDetail.showAllPartners', { count: partners.length })}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           )}
 
-          {event.partnerOrgs?.length > 0 && (
-            <p className="text-sm text-warm-muted mb-4">
-              <span className="font-medium text-warm-text">{t('eventDetail.partners')}:</span>{' '}
-              {event.partnerOrgs.join(', ')}
-            </p>
-          )}
-
+          {/* Image */}
           {event.image && (
             <img
               src={event.image}
-              alt={event.title}
-              className="w-full rounded-lg mb-4 object-cover max-h-48"
+              alt={getEventText(event, 'title', lang)}
+              className="w-full rounded-xl mb-4 object-cover max-h-48"
             />
           )}
 
-          {loc && (
+        </div>
+
+        {/* Zone 3: Sticky CTA Footer */}
+        {loc && (
+          <div className="shrink-0 px-5 py-3 bg-warm-card shadow-up pb-safe">
             <a
-              href={getDirectionsUrl(loc.lat, loc.lng, loc.name)}
+              href={getDirectionsUrl(loc.lat, loc.lng, getLocationText(loc, 'name', lang))}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-accent-gold text-white text-center py-3 rounded-lg font-semibold hover:bg-accent-gold/90 transition-colors"
+              onClick={() => {
+                trackDirectionsRequested({
+                  source: 'event_detail',
+                  locationId: event.locationId,
+                  locationName: getLocationText(loc, 'name', lang),
+                  eventId: event.id,
+                  day: event.dayIndex + 1,
+                })
+              }}
+              className="flex items-center justify-center gap-2 w-full bg-accent-gold text-white h-[52px] rounded-xl font-semibold hover:bg-accent-gold/90 transition-colors"
             >
+              <LocationPin locationId={event.locationId} variant="dot" size={20} />
               {t('eventDetail.directions')}
             </a>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   )

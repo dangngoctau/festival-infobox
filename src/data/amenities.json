@@ -1,0 +1,40 @@
+[
+  {
+    "id": "medical_01",
+    "type": "medical",
+    "name": "Trạm y tế lễ hội",
+    "name_en": "First Aid Station",
+    "lat": 15.9990,
+    "lng": 108.2555,
+    "note": "Hoạt động cả 4 ngày lễ hội",
+    "note_en": "Open during all 4 festival days"
+  },
+  {
+    "id": "water_01",
+    "type": "water",
+    "name": "Nước uống miễn phí - Chùa",
+    "name_en": "Free Drinking Water - Pagoda",
+    "lat": 15.9988,
+    "lng": 108.2545,
+    "note": "Miễn phí, phục vụ bởi Chùa",
+    "note_en": "Free, provided by the pagoda"
+  },
+  {
+    "id": "water_02",
+    "type": "water",
+    "name": "Nước uống miễn phí - Sư Vạn Hạnh",
+    "name_en": "Free Drinking Water - Su Van Hanh",
+    "lat": 15.9992,
+    "lng": 108.2567
+  },
+  {
+    "id": "info_01",
+    "type": "info",
+    "name": "Quầy thông tin BTC",
+    "name_en": "Information Desk",
+    "lat": 15.9991,
+    "lng": 108.2565,
+    "note": "Ban Tổ chức lễ hội",
+    "note_en": "Festival organizing committee"
+  }
+]

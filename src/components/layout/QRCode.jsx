@@ -1,23 +1,26 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { trackFeatureEngaged } from '../../utils/analytics'
 
-const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='
+const BASE = import.meta.env.BASE_URL
 
-export default function QRCode({ url = 'https://lehoi-quantheam.vn' }) {
-  const [error, setError] = useState(false)
+export default function QRCode() {
+  const { t } = useTranslation()
 
-  if (error) return null
+  useEffect(() => {
+    trackFeatureEngaged({ feature: 'qr_code', action: 'opened' })
+  }, [])
 
   return (
     <div className="flex flex-col items-center gap-2">
       <img
-        src={`${QR_URL}${encodeURIComponent(url)}`}
-        alt="QR Code"
+        src={`${BASE}images/qr-code.png`}
+        alt={t('qr.alt')}
         width={120}
         height={120}
         className="rounded"
-        onError={() => setError(true)}
       />
-      <p className="text-xs text-warm-muted">Quét để truy cập</p>
+      <p className="text-xs text-warm-muted">{t('qr.scanToAccess')}</p>
     </div>
   )
 }

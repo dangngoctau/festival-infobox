@@ -8,18 +8,39 @@
   --color-warm-text: #3E2723;
   --color-warm-muted: #795548;
 
+  /* Cream palette (landing page) */
+  --color-cream-light: #FFFDF8;
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #F0EBE0;
+
+  /* Bronze tones */
+  --color-bronze: #D4B896;
+  --color-bronze-dark: #8B6F47;
+
+  /* Night tones */
+  --color-night-warm: #2C1810;
+  --color-night-purple: #1a0f2e;
+
   /* Accent */
   --color-accent-gold: #C8A35A;
   --color-accent-brown: #6B4226;
   --color-accent-green: #4A6741;
 
   /* Location colors */
+  --color-loc-le-dai: #8B2500;
   --color-loc-chua: #B8860B;
-  --color-loc-san-khau: #8B2500;
-  --color-loc-su-van-hanh: #2E5A88;
-  --color-loc-hoa-quy: #4A6741;
+  --color-loc-trienlam-thieunhi: #C06080;
+  --color-loc-dao-trang: #8B6914;
+  --color-loc-mieu-huyen-tran: #9B5E6E;
+  --color-loc-chua-thai-son: #7B6B5A;
+  --color-loc-sk-dan-gian: #2E5A88;
+  --color-loc-ocop: #D4760A;
+  --color-loc-trienlam-anh: #5A8F7B;
+  --color-loc-da-my-nghe: #7B8B6F;
+  --color-loc-dam-sen: #4A6741;
   --color-loc-song-co-co: #6A3D7D;
   --color-loc-dieu-hanh: #B5651D;
+  --color-loc-cong-chao: #A08060;
 
   /* Category colors */
   --color-cat-ceremony: #C8A35A;
@@ -40,16 +61,291 @@
   --text-xl: 1.25rem;
   --text-xl--line-height: 1.5;
 
+  /* Timeline rail */
+  --color-rail-muted: #C4B5A4;
+  --color-rail-ongoing: #4A6741;
+
   /* Breakpoints */
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
 }
 
+/* Timeline rail pulse animation */
+@keyframes rail-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 103, 65, 0.4); }
+  50% { box-shadow: 0 0 0 5px rgba(74, 103, 65, 0); }
+}
+
+.rail-node-pulse {
+  animation: rail-pulse 2s ease-in-out infinite;
+}
+
+/* Lantern float animation */
+@keyframes lantern-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-85vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.animate-lantern-float {
+  animation: lantern-float linear infinite;
+  will-change: transform;
+}
+
+/* Splash SVG animations */
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes lantern-flicker {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+@keyframes water-ripple {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.animate-star-twinkle { animation: star-twinkle ease-in-out infinite; will-change: opacity; }
+.animate-lantern-flicker { animation: lantern-flicker ease-in-out infinite; will-change: opacity; }
+.animate-water-ripple { animation: water-ripple ease-out infinite; will-change: transform, opacity; }
+
+/* Zone marker pulse animation */
+@keyframes zone-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--zone-pulse-color, rgba(200, 163, 90, 0.4)); }
+  50% { box-shadow: 0 0 0 12px transparent; }
+}
+.zone-marker-pulse {
+  animation: zone-pulse 3s ease-in-out infinite;
+}
+
+/* Pin bounce on highlight */
+@keyframes pin-bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.5); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.pin-bounce {
+  animation: pin-bounce 0.5s ease;
+}
+
+/* Pin icon wrapper — allow glow/bounce to overflow */
+.pin-icon-wrapper {
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+/* Pin glow — staggered hoa đăng effect (box-shadow, works now that filter is on tiles only) */
+@keyframes pin-glow {
+  0%, 100% { box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+  50% { box-shadow: 0 2px 6px rgba(0,0,0,0.25), 0 0 10px 5px rgba(255,220,160,0.6); }
+}
+.pin-glow-anim {
+  animation: pin-glow var(--glow-dur, 3s) ease-in-out var(--glow-del, 0s) infinite;
+}
+
+/* Pin bounce on highlight */
+.pin-bounce-anim {
+  animation: pin-bounce 0.5s ease;
+}
+
+/* Menu slide-up animation */
+@keyframes menu-slide-up {
+  from { transform: translateY(6px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-menu-slide-up {
+  animation: menu-slide-up 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-lantern-float,
+  .animate-star-twinkle,
+  .animate-lantern-flicker,
+  .animate-water-ripple,
+  .rail-node-pulse,
+  .heart-pop,
+  .zone-marker-pulse,
+  .pin-bounce,
+  .pin-glow-anim,
+  .pin-bounce-anim,
+  .animate-menu-slide-up,
+  .hero-ken-burns,
+  .hero-particle {
+    animation: none;
+  }
+  .animate-lantern-float,
+  .hero-particle {
+    display: none;
+  }
+}
+
+/* Fade edge scroll indicators */
+.fade-edge-left {
+  background: linear-gradient(to right, var(--color-warm-bg), transparent);
+}
+.fade-edge-right {
+  background: linear-gradient(to left, var(--color-warm-bg), transparent);
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hero ken-burns — subtle zoom + pan */
+@keyframes hero-ken-burns {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  50%  { transform: scale(1.08) translate(-1%, -0.5%); }
+  100% { transform: scale(1.0) translate(0, 0); }
+}
+.hero-ken-burns {
+  animation: hero-ken-burns 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Floating light particles */
+@keyframes hero-float-up {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-90vh) translateX(15px); opacity: 0; }
+}
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251,191,36,0.9) 0%, rgba(251,191,36,0) 70%);
+  animation: hero-float-up linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bronze shadow utility */
+.shadow-bronze {
+  box-shadow: 0 2px 8px -2px rgba(139, 111, 71, 0.15), 0 1px 3px -1px rgba(139, 111, 71, 0.1);
+}
+
+/* Warm shadow utilities (brown-toned, replaces gray defaults) */
+.shadow-warm {
+  box-shadow: 0 1px 3px 0 rgba(62, 39, 35, 0.1), 0 1px 2px -1px rgba(62, 39, 35, 0.06);
+}
+.shadow-warm-md {
+  box-shadow: 0 4px 6px -1px rgba(62, 39, 35, 0.1), 0 2px 4px -2px rgba(62, 39, 35, 0.05);
+}
+
+/* Share button attention pulse — plays on mount with color highlight */
+@keyframes share-pulse {
+  0% { transform: scale(1); background-color: transparent; }
+  30% { transform: scale(1.15); background-color: #C8A35A30; }
+  50% { transform: scale(1.2); background-color: #C8A35A40; color: #C8A35A; }
+  70% { transform: scale(1.05); background-color: #C8A35A20; }
+  100% { transform: scale(1); background-color: transparent; }
+}
+.share-attention {
+  animation: share-pulse 700ms ease-out 1s 2;
+}
+
+/* Heart pop animation */
+@keyframes heart-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.heart-pop {
+  animation: heart-pop 300ms ease-out;
+}
+
+/* Warm map styling */
+/* Apply warm tone only to map tiles, not markers/overlays */
+.map-warm .leaflet-tile-pane {
+  filter: sepia(0.08) saturate(0.9);
+}
+
+/* Leaflet popup warm styling */
+.leaflet-popup-content-wrapper {
+  background: var(--color-warm-card);
+  color: var(--color-warm-text);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(62, 39, 35, 0.1), 0 2px 4px -2px rgba(62, 39, 35, 0.05);
+}
+.leaflet-popup-tip {
+  background: var(--color-warm-card);
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+}
+
+/* Compact utility popup */
+.utility-popup .leaflet-popup-content-wrapper {
+  border-radius: 10px;
+}
+.utility-popup .leaflet-popup-content {
+  margin: 8px 10px;
+}
+
+/* Venue label tooltip */
+.venue-label {
+  background: var(--color-warm-card) !important;
+  color: var(--color-warm-text) !important;
+  border: 1px solid rgba(139, 111, 71, 0.15) !important;
+  border-radius: 6px !important;
+  padding: 2px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(62, 39, 35, 0.1) !important;
+}
+.venue-label::before {
+  border-right-color: var(--color-warm-card) !important;
+}
+
+/* Upward shadow for sticky footer separation */
+.shadow-up {
+  box-shadow: 0 -4px 12px -4px rgba(62, 39, 35, 0.08);
+}
+
+/* Safe area padding for iOS bottom bar */
+.pb-safe {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+html {
+  /* Prevent iOS overscroll bounce on html but allow body scroll */
+  height: 100%;
+}
+
 body {
   margin: 0;
+  min-height: 100%;
   background-color: var(--color-warm-bg);
   color: var(--color-warm-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

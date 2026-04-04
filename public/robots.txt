@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lehoiquantheam-nhs-danang.vn/sitemap.xml

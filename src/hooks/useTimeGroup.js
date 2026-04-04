@@ -10,17 +10,29 @@ function getNowMinutes(now) {
   return now.getHours() * 60 + now.getMinutes()
 }
 
-export default function useTimeGroup(filteredEvents, simulatedTime = null) {
+export default function useTimeGroup(filteredEvents, timeOffset = 0) {
   const [tick, setTick] = useState(0)
 
   useEffect(() => {
-    if (simulatedTime) return
     const id = setInterval(() => setTick((t) => t + 1), 60000)
-    return () => clearInterval(id)
-  }, [simulatedTime])
+
+    const refresh = () => setTick((t) => t + 1)
+
+    const handleVisibility = () => {
+      if (!document.hidden) refresh()
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('focus', refresh)
+
+    return () => {
+      clearInterval(id)
+      document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('focus', refresh)
+    }
+  }, [])
 
   return useMemo(() => {
-    const now = simulatedTime || new Date()
+    const now = new Date(Date.now() + timeOffset)
     const nowDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
     const nowMinutes = getNowMinutes(now)
 
@@ -49,5 +61,5 @@ export default function useTimeGroup(filteredEvents, simulatedTime = null) {
     }
 
     return { ongoing, upcoming, ended }
-  }, [filteredEvents, tick, simulatedTime])
+  }, [filteredEvents, tick, timeOffset])
 }

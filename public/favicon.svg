@@ -1,4 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <circle cx="16" cy="16" r="15" fill="#C8A35A"/>
-  <text x="16" y="22" text-anchor="middle" font-size="18" fill="white" font-family="serif">&#x2638;</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #3E2723; }
+      .stem { stroke: #D4B896; }
+      .leaf { fill: #D4B896; opacity: 0.5; }
+      .petal-back { fill: #D4B896; opacity: 0.7; }
+      .petal-mid { fill: #E8D5B0; }
+      .petal-outer { fill: #FFFDF8; opacity: 0.6; }
+      .petal-front { fill: #FFFDF8; }
+      .pistil { fill: #FFFDF8; }
+      .ripple { fill: #E8D5B0; }
+      .halo { fill: #E8D5B0; }
+    }
+  </style>
+  <!-- Background circle -->
+  <circle class="bg" cx="256" cy="256" r="256" fill="#2C1810"/>
+  <!-- Water ripples -->
+  <ellipse class="ripple" cx="256" cy="390" rx="130" ry="22" fill="#C8A35A" opacity="0.10"/>
+  <ellipse class="ripple" cx="256" cy="378" rx="100" ry="14" fill="#C8A35A" opacity="0.06"/>
+  <!-- Stem -->
+  <path class="stem" d="M256 380 Q253 340 256 290" stroke="#8B6F47" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Left leaf -->
+  <path class="leaf" d="M244 340 Q210 346 190 336 Q214 326 244 340Z" fill="#8B6F47" opacity="0.45"/>
+  <!-- Halo glow -->
+  <circle class="halo" cx="256" cy="220" r="60" fill="#C8A35A" opacity="0.06"/>
+  <!-- Back petals (darkest gold) -->
+  <path class="petal-back" d="M256 280 Q195 240 185 175 Q215 225 256 250Z" fill="#A07838" opacity="0.7"/>
+  <path class="petal-back" d="M256 280 Q317 240 327 175 Q297 225 256 250Z" fill="#A07838" opacity="0.7"/>
+  <!-- Outer side petals -->
+  <path class="petal-outer" d="M256 275 Q175 245 152 170 Q190 210 256 248Z" fill="#D4B896" opacity="0.75"/>
+  <path class="petal-outer" d="M256 275 Q337 245 360 170 Q322 210 256 248Z" fill="#D4B896" opacity="0.75"/>
+  <!-- Main side petals (accent gold) -->
+  <path class="petal-mid" d="M256 270 Q190 230 175 155 Q210 200 256 240Z" fill="#C8A35A"/>
+  <path class="petal-mid" d="M256 270 Q322 230 337 155 Q302 200 256 240Z" fill="#C8A35A"/>
+  <!-- Center front petal (lightest) -->
+  <path class="petal-front" d="M256 275 Q235 210 256 140 Q277 210 256 275Z" fill="#E8D5B0"/>
+  <!-- Pistil dots -->
+  <circle class="pistil" cx="244" cy="218" r="5" fill="#FFFDF8" opacity="0.6"/>
+  <circle class="pistil" cx="256" cy="210" r="6" fill="#FFFDF8" opacity="0.85"/>
+  <circle class="pistil" cx="268" cy="218" r="5" fill="#FFFDF8" opacity="0.6"/>
+  <circle class="pistil" cx="250" cy="228" r="3.5" fill="#FFFDF8" opacity="0.4"/>
+  <circle class="pistil" cx="262" cy="228" r="3.5" fill="#FFFDF8" opacity="0.4"/>
 </svg>

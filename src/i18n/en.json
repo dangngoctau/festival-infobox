@@ -1,28 +1,32 @@
 {
   "header": {
     "tagline": "National Intangible Cultural Heritage",
-    "dates": "Apr 04–07, 2026 (17-20/02 Lunar Bính Ngọ)"
+    "dates": "Apr 04–07, 2026 (17-20/02 Lunar · Year of the Fire Horse)"
   },
   "tabs": {
     "schedule": "Schedule",
-    "map": "Map"
+    "map": "Places"
   },
   "filters": {
-    "all": "All"
+    "all": "All",
+    "byLocation": "By place",
+    "byCategory": "By type"
   },
   "dayLabels": {
     "0": "Opening",
-    "1": "Day 2",
-    "2": "Main",
+    "1": "Vibrant",
+    "2": "Joyful",
     "3": "Closing"
   },
   "timeGroup": {
     "ongoing": "Happening now",
     "upcoming": "Coming up",
-    "ended": "Ended"
+    "ended": "Ended",
+    "now": "Now"
   },
   "emptyState": {
-    "daysUntil": "days until the festival",
+    "daysUntil_one": "day until the festival",
+    "daysUntil_other": "days until the festival",
     "summary": "Apr 04–07, 2026 | 4 days | 40+ events",
     "addToCalendar": "Add to Calendar",
     "festivalEnded": "The festival has ended",
@@ -32,9 +36,59 @@
     "directions": "Get Directions",
     "organization": "Organized by",
     "partners": "Co-organized",
-    "close": "Close"
+    "close": "Close",
+    "nearbyAmenities": "Nearby amenities",
+    "about": "About",
+    "where": "Location",
+    "organizedBy": "Organized by",
+    "coOrganized": "Co-organized by",
+    "showAllPartners": "Show all ({{count}})",
+    "hidePartners": "Show less",
+    "ended": "Ended",
+    "favorite": "Save event",
+    "unfavorite": "Unsave"
   },
+  "lunarLabel": "{{lunar}} Lunar",
   "noEvents": "No events match your filters.",
+  "noEventsWarm": "No events here today.\nTry another day!",
+  "dayContext": {
+    "label": "Day {{num}} — {{label}} · {{count}} events",
+    "tagline": {
+      "0": "Morning sutras, afternoon opening, evening lanterns",
+      "1": "Stilts and chants, peace and joy",
+      "2": "Bodhisattva Day — heart of the festival",
+      "3": "Walk for peace, closing ceremony"
+    }
+  },
+  "timeState": {
+    "beforeHeading": "Schedule for {{date}}",
+    "afterMessage": "The festival has ended. See you in 2027!",
+    "ongoing": "Happening now"
+  },
+  "map": {
+    "toggleAmenities": "Toggle amenities",
+    "loadError": "Unable to load map",
+    "allZones": "All zones",
+    "backToZones": "Back to all zones",
+    "findMyLocation": "Find my location",
+    "gpsButton": "I'm here",
+    "gpsSearching": "Searching...",
+    "gpsError": "Could not find location",
+    "gpsFound": "Location found",
+    "utilityToggle": "Utilities",
+    "utilities": "Utilities",
+    "restroom": "Restrooms",
+    "parking": "Parking",
+    "directions": "Directions",
+    "locations": "locations"
+  },
+  "catGroup": {
+    "buddhist-ceremony": "Buddhist Ceremony",
+    "performing-arts": "Performing Arts",
+    "exhibition": "Exhibition",
+    "folk-culture": "Folk Culture",
+    "cuisine": "Cuisine"
+  },
   "category": {
     "ceremony": "Ceremony",
     "dharma": "Dharma",
@@ -50,5 +104,109 @@
   "weather": {
     "noData": "Weather data unavailable"
   },
-  "featured": "Featured event"
+  "featured": "Featured event",
+  "favorites": {
+    "add": "Save event",
+    "remove": "Unsave event",
+    "chip": "♥ Saved",
+    "chipCount": "♥ Saved ({{count}})"
+  },
+  "places": {
+    "contextBefore": "Explore the festival area before you arrive",
+    "contextDuring": "You're at the festival — find your way below",
+    "contextAfter": "Festival area — see you again in 2027!",
+    "toggleVenues": "Destinations",
+    "toggleAmenities": "What do you need?",
+    "venueCount": "{{count}} festival venues",
+    "amenityAllLabel": "{{count}} amenities nearby",
+    "eventsToday": "{{count}} events today",
+    "directions": "Get Directions"
+  },
+  "qr": {
+    "scanToAccess": "Scan to access",
+    "alt": "QR Code"
+  },
+  "splash": {
+    "alt": "Quan The Am Festival at Ngu Hanh Son, Da Nang"
+  },
+  "ics": {
+    "summary": "Quan The Am Festival 2026",
+    "description": "Quan The Am Festival — National Intangible Cultural Heritage. Ngu Hanh Son, Da Nang.",
+    "location": "Quan The Am Pagoda, 48 Su Van Hanh, Ngu Hanh Son, Da Nang"
+  },
+  "aria": {
+    "toggleLanguage": "Toggle language",
+    "toggleSettings": "Settings",
+    "share": "Share",
+    "shareEvent": "Share event"
+  },
+  "share": {
+    "copied": "Link copied"
+  },
+  "analyticsNotice": {
+    "message": "We collect anonymous usage statistics to improve your experience — no personal data is stored.",
+    "ok": "Got it"
+  },
+  "landing": {
+    "heritageBadge": "National Intangible Cultural Heritage",
+    "lunarDates": "17–20/02 Lunar · Year of the Fire Horse",
+    "dates": "April 4–7, 2026",
+    "daysUntil_one": "{{count}} day to go",
+    "daysUntil_other": "{{count}} days to go",
+    "countdownPrefix": "",
+    "countdownSuffix_one": "day to go",
+    "countdownSuffix_other": "days to go",
+    "duringFestival": "Happening now — Day {{dayNum}}/4",
+    "festivalEnded": "See you again in 2027",
+    "ctaDefault": "View schedule",
+    "ctaDuring": "See what's on",
+    "ctaAfter": "Review schedule",
+    "transitionTagline": "4 days · 40+ events · one complete experience",
+    "featuredTitle": "Don't miss",
+    "featuredDuring": "Today at the festival",
+    "featuredOngoing": "Happening now",
+    "featuredUpcoming": "Coming up",
+    "featuredEndedBadge": "Ended",
+    "featuredTomorrow": "Tomorrow at the festival",
+    "featuredTomorrowBadge": "Tomorrow",
+    "featuredHighlights": "Festival highlights",
+    "highlightsTitle": "5 experiences at the festival",
+    "primaryBadge": "Highlight",
+    "eventCount": "{{count}} events",
+    "viewFullSchedule": "View full schedule →",
+    "teaserPerformingArts": "• Apr 4 · Rod & water puppet show",
+    "teaserExhibition": "• Apr 4 · Stone sculpture & stonecraft from Non Nuoc",
+    "teaserFolkCulture": "• Apr 6 · Boat race honoring Princess Huyền Trân on Co Co River",
+    "teaserCuisine": "• Apr 4 · Da Nang vegetarian cuisine",
+    "beforeYouGoTitle": "Before you go",
+    "whenWhereTitle": "When & Where",
+    "duration": "4 days · 40+ events",
+    "venueName": "Quan The Am Pagoda & Su Van Hanh Street",
+    "venueDistrict": "Hoa Hai, Ngu Hanh Son, Da Nang",
+    "entryPoint": "Enter from the gate on Le Van Hien Road",
+    "gateDirectionsLink": "Directions to the gate →",
+    "gettingThereTitle": "Getting there",
+    "transportMotorbike": "Motorbike / Car",
+    "transportMotorbikeInfo": "Park on Le Van Hien Road (2 lots near the gate), 2–3 min walk in. Su Van Hanh Street is pedestrian-only.",
+    "transportBus": "Bus",
+    "transportBusInfo": "Route 02 (Central Bus Station – Da Nang Admin Center – Cua Dai) stops at the festival gate on Le Van Hien Road. Every 15–30 min until 7pm; Grab/taxi for evenings.",
+    "transportGrab": "Grab / Taxi",
+    "transportGrabInfo": "Drop off at Su Van Hanh gate (Le Van Hien intersection). Float parade may cause traffic evenings day 1–3.",
+    "tipsTitle": "Tips for visitors",
+    "tipClothing": "Wear modest clothing when entering the Pagoda grounds",
+    "tipWeatherStatic": "☀️ Da Nang in April is 30–35°C — bring a hat and water",
+    "tipWeatherRain": "🌧️ {{context}} — bring an umbrella or raincoat",
+    "tipWeatherHot": "☀️ {{context}}: up to {{temp}}°C — bring a hat and water",
+    "tipWeatherMild": "⛅ {{context}} — pleasant weather, bring a hat just in case",
+    "weatherContextCurrent": "Right now",
+    "weatherContextForecast": "Festival forecast",
+    "tipFood": "Vegetarian food area and OCOP stalls available at the festival",
+    "sidebarVenueAlt": "Quan The Am Pagoda",
+    "sidebarShareTitle": "Share with friends",
+    "back": "Back",
+    "festivalName": "Quan The Am Festival",
+    "festivalLocation": "Ngu Hanh Son, Da Nang",
+    "footerCTAText": "Ready to explore the festival?",
+    "footerCTAButton": "View schedule"
+  }
 }

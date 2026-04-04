@@ -1,0 +1,51 @@
+[
+  {
+    "id": "buddhist-ceremony",
+    "icon": "🙏",
+    "featuredEvents": ["d3-01"],
+    "isPrimary": true,
+    "accentColor": "#C8A35A",
+    "description": "Tâm điểm tín ngưỡng — lễ vía, quán đảnh, thuyết pháp, hoa đăng thiền hành",
+    "descriptionEn": "Heart of the faith — commemoration, abhisheka, dharma talks, lantern walking meditation"
+  },
+  {
+    "id": "performing-arts",
+    "icon": "🎭",
+    "featuredEvents": ["d1-02", "d1-15"],
+    "isPrimary": false,
+    "accentColor": "#6A3D7D",
+    "description": "Lân Sư Rồng, múa rối, chương trình nghệ thuật — lung linh sắc màu lễ hội",
+    "descriptionEn": "Lion & Dragon Dance, puppetry, stage shows — the festival's vibrant colours",
+    "teaser": "teaserPerformingArts"
+  },
+  {
+    "id": "exhibition",
+    "icon": "🖼️",
+    "featuredEvents": ["d1-04", "d1-03"],
+    "isPrimary": false,
+    "accentColor": "#2E5A88",
+    "description": "Nhiếp ảnh, mỹ thuật, thư pháp, điêu khắc đá — vẻ đẹp qua góc nhìn nghệ sĩ",
+    "descriptionEn": "Photography, fine arts, calligraphy, stone sculpture — beauty through the artist's eye",
+    "teaser": "teaserExhibition"
+  },
+  {
+    "id": "folk-culture",
+    "icon": "🎪",
+    "featuredEvents": ["d3-03", "d1-09"],
+    "isPrimary": false,
+    "accentColor": "#2E7D32",
+    "description": "Bài chòi, cà kheo, nhảy sạp, đua thuyền — tinh hoa trò chơi dân gian miền Trung",
+    "descriptionEn": "Bài Chòi, stilt walking, bamboo dance, boat race — Central Vietnam folk heritage",
+    "teaser": "teaserFolkCulture"
+  },
+  {
+    "id": "cuisine",
+    "icon": "🍜",
+    "featuredEvents": ["d1-11"],
+    "isPrimary": false,
+    "accentColor": "#E65100",
+    "description": "Tinh hoa ẩm thực chay Đà Nẵng — hương vị thanh tịnh",
+    "descriptionEn": "Da Nang's finest vegetarian cuisine — pure and wholesome flavours",
+    "teaser": "teaserCuisine"
+  }
+]
